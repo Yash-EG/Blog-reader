@@ -47,7 +47,9 @@ const BlogReader: React.FC = () => {
                         <li key={post.id} className={`m-4 w-full sm:w-[45%] lg:w-[30%] min-h-[45vh] ${isNightMode ? 'border' : 'border-black border-2'} rounded-xl shadow ${isNightMode ? 'bg-[#1D2430] hover:bg-slate-600' : 'bg-white hover:bg-gray-200'} hover:shadow-md hover:shadow-slate-200`}>
                             <img src="https://picsum.photos/600/350" alt="img" className='rounded-t-xl w-full' />
                             <div className='p-4'>
+                                <div className=' min-h-[10vh]'>
                                 <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+                                </div>
                                 <p className={`${isNightMode ? 'text-gray-100' : 'text-gray-900'} mb-4`}>{post.body.substring(0, 150)}...</p>
                                 <hr />
                                 <div className='text-xl flex justify-center items-center py-4'>
