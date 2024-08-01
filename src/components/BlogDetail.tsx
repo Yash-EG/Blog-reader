@@ -42,12 +42,12 @@ const BlogDetail: React.FC = () => {
 
   return (
     <div
-      className={`w-full h-[100vh] overflow-x-hidden ${isNightMode
-          ? "bg-gradient-to-r from-[#121723] to-[#122435] text-gray-200"
-          : "bg-gradient-to-r from-gray-100 to-[#a0b4c7] text-gray-900"
-        }`}
+      className={`w-full min-h-screen overflow-x-hidden ${isNightMode
+        ? "bg-gradient-to-r from-[#121723] to-[#122435] text-gray-200"
+        : "bg-gradient-to-r from-gray-100 to-[#a0b4c7] text-gray-900"
+      }`}
     >
-      <div className="container px-10 mx-auto py-12 md:py-24">
+      <div className="container px-4 md:px-10 mx-auto py-6 md:py-12 lg:py-24">
         <div className="flex flex-wrap items-center justify-between py-6">
           <div></div>
           <button
@@ -57,44 +57,44 @@ const BlogDetail: React.FC = () => {
             {isNightMode ? <FaSun /> : <FaMoon />}
           </button>
         </div>
-        <div className="mx-32">
+        <div className="mx-4 md:mx-8 lg:mx-32">
           <div className="min-h-[18vh]">
-            <h1 className="text-5xl font-bold mb-10">{post.title}</h1>
-            <div className="flex m-1">
-              <div className="flex justify-center items-center mb-10">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-10">{post.title}</h1>
+            <div className="flex flex-col md:flex-row md:items-center m-1">
+              <div className="flex items-center mb-4 md:mb-10">
                 <span className="flex items-center justify-center w-12 h-12 rounded-full bg-red-500 text-white">
                   YP
                 </span>
-                <p className="text-xl px-2">By Yash Patel</p>
+                <p className="text-lg md:text-xl px-2">By Yash Patel</p>
                 <div className="p-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="lucide lucide-calendar-days "
-                >
-                  <path d="M8 2v4"></path>
-                  <path d="M16 2v4"></path>
-                  <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                  <path d="M3 10h18"></path>
-                  <path d="M8 14h.01"></path>
-                  <path d="M12 14h.01"></path>
-                  <path d="M16 14h.01"></path>
-                  <path d="M8 18h.01"></path>
-                  <path d="M12 18h.01"></path>
-                  <path d="M16 18h.01"></path>
-                </svg>
-              </div>
-              <div className="px-2 text-xl">
-                31 August, 2024
-              </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    className="lucide lucide-calendar-days"
+                  >
+                    <path d="M8 2v4"></path>
+                    <path d="M16 2v4"></path>
+                    <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                    <path d="M3 10h18"></path>
+                    <path d="M8 14h.01"></path>
+                    <path d="M12 14h.01"></path>
+                    <path d="M16 14h.01"></path>
+                    <path d="M8 18h.01"></path>
+                    <path d="M12 18h.01"></path>
+                    <path d="M16 18h.01"></path>
+                  </svg>
                 </div>
+                <div className="px-2 text-lg md:text-xl">
+                  31 August, 2024
+                </div>
+              </div>
             </div>
           </div>
           <hr />
@@ -102,10 +102,10 @@ const BlogDetail: React.FC = () => {
             <img
               src="https://picsum.photos/600/350"
               alt="img"
-              className="rounded-t-xl w-[100vh]"
+              className="rounded-t-xl w-full md:w-[70%]"
             />
           </div>
-          <div className="py-2 text-xl space-y-2">
+          <div className="py-2 text-base md:text-xl space-y-2">
             <p>{post.body}</p>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore
@@ -145,7 +145,7 @@ const BlogDetail: React.FC = () => {
               magnam modi asperiores ipsa doloremque quaerat. Voluptas molestias
               dolor sed laborum.
             </p>
-            <h1 className="text-3xl font-bold">Random Title</h1>
+            <h1 className="text-2xl md:text-3xl font-bold">Random Title</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
               dolorum iste tenetur fugit facilis deserunt. Molestiae recusandae,
