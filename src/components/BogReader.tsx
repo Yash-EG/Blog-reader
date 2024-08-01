@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { Post } from '../types/Post';
+import { Link } from 'react-router-dom';
 
 const BlogReader: React.FC = () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const [error, setError] = useState<string | null>(null);
-    const [isNightMode, setIsNightMode] = useState<boolean>(true); 
+    const [isNightMode, setIsNightMode] = useState<boolean>(true);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -45,33 +46,29 @@ const BlogReader: React.FC = () => {
                 <ul className='flex flex-wrap -m-4 justify-center'>
                     {posts.map((post) => (
                         <li key={post.id} className={`m-4 w-full sm:w-[45%] lg:w-[30%] min-h-[45vh] ${isNightMode ? 'border' : 'border-black border-2'} rounded-xl shadow ${isNightMode ? 'bg-[#1D2430] hover:bg-slate-600' : 'bg-white hover:bg-gray-200'} hover:shadow-md hover:shadow-slate-200`}>
-                            <img src="https://picsum.photos/600/350" alt="img" className='rounded-t-xl w-full' />
-                            <div className='p-4'>
-                                <div className=' min-h-[10vh]'>
-                                <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-                                </div>
-                                <p className={`${isNightMode ? 'text-gray-100' : 'text-gray-900'} mb-4`}>{post.body.substring(0, 150)}...</p>
-                                <hr />
-                                <div className='text-xl flex justify-center items-center py-4'>
+                            <Link to={`/post/${post.id}`}>
+                                <img src="https://picsum.photos/600/350" alt="img" className='rounded-t-xl w-full' />
+                                <div className='p-4'>
+                                    <div className='min-h-[10vh]'>
+                                        <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+                                    </div>
+                                    <p className={`${isNightMode ? 'text-gray-100' : 'text-gray-900'} mb-4`}>{post.body.substring(0, 150)}...</p>
+                                    <hr />
+                                    <div className='text-xl flex justify-center items-center py-4'>
                                     <span className='flex items-center justify-center w-10 h-10 rounded-full bg-red-500 text-white'>YP</span>
-                                    <div className='px-2 flex justify-center items-center'>
-                                        <div className='px-2'>
-                                            By Yash Patel
-                                        </div>
-                                        <div>
-                                            |
-                                        </div>
-                                        <div className='flex-col px-2 text-xs'>
-                                            <div className='text-sm font-medium'>
-                                                Date
+                                        <div className='px-2 flex justify-center items-center'>
+                                            <div className='px-2'>
+                                                By Yash Patel
                                             </div>
-                                            <div>
-                                                July 20, 2024
+                                            <div>|</div>
+                                            <div className='flex-col px-2 text-xs'>
+                                                <div className='text-sm font-medium'>Date</div>
+                                                <div>July 20, 2024</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         </li>
                     ))}
                 </ul>
